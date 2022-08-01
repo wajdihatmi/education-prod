@@ -1,0 +1,115 @@
+<app-banner baner="Signup"></app-banner>
+
+
+<!-- <qr-code [value]="my compte" [size]="150"></qr-code> -->
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7" style="padding-top: 200px">
+                <form [formGroup]="signupForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="FirstName" formControlName="FirstName">
+                    </div>
+                    <div *ngIf="signupForm.controls['FirstName'].invalid &&
+                    (signupForm.controls['FirstName'].touched 
+                    ||signupForm.controls['FirstName'].dirty)">
+                        <div *ngIf="signupForm.controls['FirstName'].errors.minLength">
+                            first name must have at last 3 chars
+                        </div>
+                        <div *ngIf="signupForm.controls['FirstName'].errors.required">
+                            firstName is requierd
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="LastName" formControlName="lastName">
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].invalid &&
+                    (signupForm.controls['lastName'].touched 
+                    ||signupForm.controls['lastName'].dirty)">
+                        <div *ngIf="signupForm.controls['lastName'].errors.minLength">
+                            lastName name must have at last 4 chars
+                        </div>
+                        <div *ngIf="signupForm.controls['lastName'].errors.required">
+                            lasttName is requierd
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].invalid &&
+                    (signupForm.controls['email'].touched 
+                    ||signupForm.controls['email'].dirty)">
+                        <div *ngIf="signupForm.controls['email'].errors.minLength">
+                            email invalid
+                        </div>
+                        <div *ngIf="signupForm.controls['email'].errors.required">
+                            email is requierd
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="password" formControlName="pwd">
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].invalid &&
+                    (signupForm.controls['pwd'].touched 
+                    ||signupForm.controls['pwd'].dirty)">
+                        <div *ngIf="signupForm.controls['pwd'].errors.minLength">
+                            password must have at last 8 chars
+                        </div>
+                        <div *ngIf="signupForm.controls['pwd'].errors.required">
+                            password is requierd
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="CIN" formControlName="cin">
+                    </div>
+                    <div *ngIf="signupForm.controls['cin'].invalid &&
+                    (signupForm.controls['cin'].touched 
+                    ||signupForm.controls['cin'].dirty)">
+                        <div *ngIf="signupForm.controls['cin'].errors.minLength">
+                            cin must have at last 3 chars
+                        </div>
+                        <div *ngIf="signupForm.controls['cin'].errors.required">
+                            cin is requierd
+                        </div>
+
+                    </div>
+                    <div class="text-danger">
+                        {{msgError}}
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Tel" formControlName="tel">
+                    </div>
+                    <div *ngIf="signupForm.controls['tel'].invalid &&
+                    (signupForm.controls['tel'].touched 
+                    ||signupForm.controls['tel'].dirty)">
+                        <div *ngIf="signupForm.controls['tel'].errors.minLength">
+                            tel must have at last 3 chars
+                        </div>
+                        <div *ngIf="signupForm.controls['tel'].errors.required">
+                            tel is requierd
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="form-control" placeholder="signup" (click)="Signup(signupForm.value)">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

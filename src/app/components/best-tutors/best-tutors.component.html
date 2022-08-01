@@ -1,0 +1,47 @@
+<app-banner baner="Best Tutors"></app-banner>
+<div class="team">
+    <!-- <div class="team_background parallax-window" data-parallax="scroll" data-image-src="assets/images/team_background.jpg" data-speed="0.8"></div> -->
+    <div class="container">
+        <!-- <div class="row">
+
+            <div class="col-lg-12 col-md-6 team_col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">The Best Tutors in Town</h2>
+                    <div class="section_subtitle">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit venenatis sem</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-lg-12">
+            <div class="row team_row" *ngFor="let T of tutors | customFilter: SerchPipe">
+
+
+                <app-tutor [M]="T"></app-tutor>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row ml-9" style="width: 800px;">
+    <div class="col-md-6" style="margin-left: 55%">
+        <label>QR-Code</label>
+        <textarea type="text" class="form-control" [(ngModel)]="qrcode" name="qr"></textarea>
+    </div>
+    <div class="col-md-3" style="margin-left: 55%">
+        <qr-code [value]="qrcode" [size]="420" background="White" foreground="red"></qr-code>
+    </div>
+</div>
+
+<div style="background-color: rgb(255, 7, 7)">
+    <form class="col-lg-4 course_col" style="margin-left:25%">
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="SerchPipe" placeholder="serch-teacher" name="s">
+        </div>
+    </form>
+</div>

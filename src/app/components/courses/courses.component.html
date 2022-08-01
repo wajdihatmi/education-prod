@@ -1,0 +1,16 @@
+<!-- <app-banner baner="Courses"></app-banner> -->
+
+
+
+
+<!-- <div class="section_background parallax-window" data-parallax="scroll" data-image-src="assets/images/courses_background.jpg" data-speed="0.8" style="width: 500px;"></div> -->
+
+
+
+
+
+
+<div *ngFor="let C of courses">
+    <app-course [R]="C" style="width: 800px;"></app-course>
+
+</div>

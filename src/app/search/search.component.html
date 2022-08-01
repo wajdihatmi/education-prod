@@ -1,0 +1,30 @@
+<app-banner baner="Serch"></app-banner>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7" style="padding-top: 200px">
+                <form [formGroup]="serchForm">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="serch" formControlName="name">
+                    </div>
+                    <div *ngIf="serchForm.controls['name'].invalid &&
+                    (serchForm.controls['name'].touched 
+                    ||serchForm.controls['name'].dirty)">
+
+                        <div *ngIf="serchForm.controls['name'].errors.required">
+                            name is requierd
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" styleclass="form-control" placeholder="serch-name" (click)="serch()">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

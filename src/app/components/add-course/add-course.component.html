@@ -1,0 +1,38 @@
+<app-banner baner="add-course"></app-banner>
+<!-- <div style="margin-left: 950px">
+    <app-course></app-course>
+</div> -->
+<!-- <div style="margin-left: 950px" class="col-lg-12">
+    <app-course></app-course>
+</div> -->
+<div class="site-section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" style="padding-top: 300px">
+                <form #AddCourse="ngForm" (ngSubmit)="AddOrEditCourse()">
+                    <div class="form-group">
+                        <input type="text" name="n" class="form-control" [(ngModel)]="C.name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="p" class="form-control" [(ngModel)]="C.prix" placeholder="prix">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="d" class="form-control" [(ngModel)]="C.description" placeholder="Description">
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="number" name="p" class="form-control" [(ngModel)]="C.place" placeholder="place">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="form-control" placeholder="add" [value]="titleBtnC">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

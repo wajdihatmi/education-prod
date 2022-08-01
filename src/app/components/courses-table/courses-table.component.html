@@ -1,0 +1,30 @@
+{{title}}
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Description</th>
+            <th scope="col">Place</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let C of pageOfItems">
+            <th scope="row">{{C._id}}</th>
+            <td>{{C.name}}</td>
+            <td>{{C.prix}}</td>
+            <td>{{C.description}}</td>
+            <td>{{C.place}}</td>
+            <td>
+                <button class="btn btn-succes" (click)="display(C._id)">Display</button>
+                <button class="btn btn-warning" (click)="edit(C._id)">Edit</button>
+                <button class="btn btn-danger" (click)="delte(C._id)">Delte</button>
+            </td>
+        </tr>
+
+        <jw-pagination [pageSize]="5" [items]="courses" (changePage)="onChangePage($event)"></jw-pagination>
+    </tbody>
+</table>

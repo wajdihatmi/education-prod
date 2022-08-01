@@ -1,0 +1,43 @@
+<app-banner baner="add-teacher" style="margin-left: 500px"></app-banner>
+<div style="padding-top: 300px">
+    <app-tutor></app-tutor>
+</div>
+<div class="site-section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <form #AddTeacher="ngForm" (ngSubmit)="AddOrEditTeacher()">
+                    <div class="form-group">
+                        <input type="text" name="a" class="form-control" placeholder="Name" [(ngModel)]="T.name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="b" class="form-control" placeholder="age" [(ngModel)]="T.age">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="c" class="form-control" placeholder="matiere" [(ngModel)]="T.matiere">
+                    </div>
+                    <div class="form-group" style="visibility:hidden ;">
+                        <input type="file" name="g" class="form-control" #filePicker (change)='onImageSelected($event)' [(ngModel)]="T.img">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" (click)="filePicker.click()">
+                            please select image
+                        </button>
+                    </div>
+                    <div>
+                        <img [src]="imagePreview" alt="" width="200px" height="200px">
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" class="form-control" placeholder="add" [value]="titleBtnT">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

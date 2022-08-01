@@ -1,0 +1,28 @@
+<app-banner baner="login"></app-banner>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7" style="padding-top: 200px">
+                <form #loginForm="ngForm" (ngSubmit)="login()">
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="password" [(ngModel)]="user.pwd" name="psw">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="CIN" [(ngModel)]="user.cin" name="cin">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control" placeholder="login">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

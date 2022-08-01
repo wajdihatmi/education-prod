@@ -1,0 +1,38 @@
+<div class="hero overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">teacher-table</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{{title}}
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Matiere</th>
+            <th scope="col" *ngIf="isAction">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let T of teacher">
+
+            <th scope="row">{{T._id}}</th>
+            <td>{{T.name}}</td>
+            <td>{{T.age}}</td>
+            <td>{{T.matiere}}</td>
+            <td *ngIf="isAction">
+                <button class="btn btn-succes" (click)="display(T._id)">Display</button>
+                <button class="btn btn-warning" (click)="edit(T._id)">Edit</button>
+                <button class="btn btn-danger" (click)="delte(T._id)">Delte</button>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
